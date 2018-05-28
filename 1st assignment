@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+class GoodbyeMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Goodbye {this.props.name}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <GoodbyeMessage name="Drew" />,
+  mountNode
+);
