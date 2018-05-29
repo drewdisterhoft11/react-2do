@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+class GoodByeMessage extends React.Component {
+ constructor(props){
+ super(props);
+ this.state = {
+    text: "We hope to see you again!"
+ }
+}
+  render() {
+    return (
+      <div>
+        <h1>Goodbye{this.props.name}</h1>
+        <h2>{this.state.text}</h2>
+      </div>
+    );
+  }
+}
+
+GoodByeMessage.defaultProps = {
+  text: "We hope to see you again!"
+}
+
+ReactDOM.render(
+  <GoodbyeMessage name="Drew" />,
+  mountNode
+);
