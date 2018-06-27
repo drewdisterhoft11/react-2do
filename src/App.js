@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import ToDo from './components/ToDo.js';
+
+
 class App extends Component {
   constructor(props) {
    super(props);
@@ -33,27 +34,34 @@ class App extends Component {
    this.setState({ todos: todos });
  }
 
+ toggledeleteToDo(index){
+   this.setState({
+     todos: this.state.todos.filter(toggledeleteToDo => toggleComplete !== index)
+   });
+ }
+
+
   render() {
     return (
     <div className="App">
-      <ul>
-      { this.state.todos.map( (todo, index) =>
-        <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
-     )}
-   </ul>
-   <form onSubmit={ (e) => this.handleSubmit(e) }>
-    <input type="text" value={ this.state.newToDoDescription } onChange={ (e) => this.handleChange(e) } />
-    <input type="submit" />
-   </form>
-  </div>
-);
-}
-}
-         )}
-      </ul>
+        <ul>
+          { this.state.todos.map( (todo, index) =>
+            <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
+            <ToDo key={ index } description={ todo.description}  isCompleted={ todo.isCompleted } toggledeleteToDo={ () => this.toggledeleteToDo(index) } />
+          )}
+        </ul>
+      <form onSubmit={ (e) => this.handleSubmit(e) }>
+        <input type="text" value={ this.state.newToDoDescription } onChange={ (e) => this.handleChange(e) } />
+        <input type="submit" />
+      </form>
+      <form onSubmit={ (e) => this.handleSubmit(e) }>
+        <input type="button" />
+        <input type="submit" />
     </div>
-    );
+   );
   }
-}
+
+
+
 
 export default App;
