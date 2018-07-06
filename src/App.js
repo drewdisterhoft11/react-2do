@@ -18,7 +18,7 @@ class App extends Component {
 
  handleChange(e) {
    this.setState({ newToDoDescription: e.target.value })
- }
+ };
 
  handleSubmit(e) {
    e.preventDefault();
@@ -48,7 +48,7 @@ class App extends Component {
           { this.state.todos.map( (todo, index) =>
             <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
             <ToDo key={ index } description={ todo.description}  isCompleted={ todo.isCompleted } toggledeleteToDo={ () => this.toggledeleteToDo(index) } />
-          )}
+          })
         </ul>
       <form onSubmit={ (e) => this.handleSubmit(e) }>
         <input type="text" value={ this.state.newToDoDescription } onChange={ (e) => this.handleChange(e) } />
