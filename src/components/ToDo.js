@@ -5,7 +5,7 @@ import React, { Component } from 'react';
     return (
       <li>
          <input type="checkbox" checked={ this.props.isCompleted } onChange={ this.props.toggleComplete } />
-         <input type="button" onClick={ this.props.isCompleted } onChange={ this.props.toggledeleteToDo } />
+         <input type="button" Delete={ this.props.toggleDeleteToDo} onClick={ this.props.toggleComplete } />
          <span>{ this.props.description }</span>
        </li>
 
